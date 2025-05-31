@@ -1,0 +1,14 @@
+config:
+  target: "http://localhost:8000"  
+  phases:
+    - duration: 10   # duración del test en segundos
+      arrivalRate: 150 # número de usuarios por segundo que llegan
+  defaults:
+    headers:
+      Content-Type: "application/json"
+
+scenarios:
+  - name: "Cargar lista de productos"
+    flow:
+      - get:
+          url: "/artillery"  # Cambiá por la ruta que quieras testear
